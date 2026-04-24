@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Link App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow: hidden;
+    }
+    .panel {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      overflow: hidden;
+      animation: glow 1.5s infinite alternate;
+    }
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 60px rgba(0, 255, 255, 1);
+      }
+    }
+    .scanline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        rgba(255, 255, 255, 0.1) 0,
+        rgba(255, 255, 255, 0.1) 1px,
+        rgba(0, 0, 0, 0.1) 1px,
+        rgba(0, 0, 0, 0.2) 100%
+      );
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .chromatic-aberration {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: hue-rotate(15deg) saturate(150%);
+      mix-blend-mode: overlay;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .dynamic-light {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0) 70%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <div class="scanline"></div>
+    <div class="chromatic-aberration"></div>
+    <div class="dynamic-light"></div>
+    <h1>Welcome to My Link App</h1>
+  </div>
+</body>
+</html>
